@@ -2,7 +2,7 @@
 
 ## Welcome
 
-[*Draw.AI**](https://nasdanika-templates.github.io/draw-ai/index.html) is a pragmatic, lightweight methodology with supporting tooling for capturing and operationalizing the *knowledge* that makes systems work. 
+[**Draw.AI**](https://nasdanika-templates.github.io/draw-ai/index.html) is a pragmatic, lightweight methodology with supporting tooling for capturing and operationalizing the *knowledge* that makes systems work. 
 Use familiar visual tools to [**draw agentic flows**](flow/index.html), [**define rich ontologies**](ontology/index.html), and [**sketch functional UI wireframes**](flow/swimlanes/user/user-input/index.html) — then turn those diagrams into executable artifacts: JSON schemas, Ecore models, functional UI prototypes, and agentic runtimes.
 
 You are looking at a ready‑to‑use template. 
