@@ -4,6 +4,16 @@ Action:
     location: https://github.com/Nasdanika-Templates
     children:
       - Action:
+          location: ${base-uri}index.html
+          text: Illustations
+          content:
+            Interpolator:
+              source:
+                Markdown:
+                  style: true
+                  source:
+                    exec.content.Resource: README.md
+      - Action:
           location: ${base-uri}search.html
           icon: fas fa-search
           text: Search
@@ -11,15 +21,8 @@ Action:
             Interpolator:
               source:
                 exec.content.Resource: classpath://org/nasdanika/models/app/gen/search.html
-      - Action:
-          location: ${base-uri}glossary.html
-          text: Glossary
-          content:
-            Interpolator:
-              source:
-                exec.content.Resource: classpath://org/nasdanika/models/app/gen/semantic-info.html
     navigation:
       - Action:
           text: Source
           icon: fab fa-github
-          location: https://github.com/Nasdanika-Templates/drawio-site  
+          location: https://github.com/Nasdanika-Templates/draw-ai
