@@ -5,7 +5,7 @@ Action:
     children:
       - Action:
           location: ${base-uri}index.html
-          text: Illustations
+          text: Draw.AI
           content:
             Interpolator:
               source:
