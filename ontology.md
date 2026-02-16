@@ -71,6 +71,45 @@ The YAML approach is more flexible. It may be used to provide bindings to operat
 
 ---
 
+## Generation from existing schemas
+
+You may manually create or generate initial ontologies from existing schemas such as SQL database, XML and JSON schemas, APIs - Java, OpenAPI.
+
+Examples:
+
+* [A2a](https://a2a.models.nasdanika.org/) - generated from the A2a JSON Schema
+* [Jira](https://jira.models.nasdanika.org/index.html) - manually created from [Jira Java API](https://mvnrepository.com/artifact/com.atlassian.jira/jira-rest-java-client-api)
+* [GitLab](https://gitlab.models.nasdanika.org/default-graph.html) - manually created from [gitlab4j](https://github.com/gitlab4j/gitlab4j-api)
+* [Database](https://sql.models.nasdanika.org/demos/sample-database-docs/index.html) - generated from [JDBC Metadata](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/java/sql/DatabaseMetaData.html) with [Nasdanika SQL](https://sql.models.nasdanika.org/) - no diagram yet, generated to an Ecore model.
+
+You can also implement merging of modifications in the source and manual modifications in the ontology using the three-way-merge:
+
+* Root revision - when the diagram was originally generated without human edits
+* Current revision with human edits
+* New diagram generated from the source
+
+Merge rules:
+
+* If external source adds something → add it
+* If external source changes something → update semantic properties but preserve human edits
+* If humans add something → keep it
+* If both changed the same thing → conflict resolution. Present to a human
+* If external source deletes something → configurable
+    * Soft delete
+    * Mark deprecated
+    * Or remove
+
+[EMF Compare](https://compare.models.nasdanika.org/) might be used for merging:
+
+* Convert the diagram revisions to Ecore models (there is a model and a method)
+* Compare
+* Create a list of changes
+* Apply changes - may present changes to the user before applying
+
+Generating ontologies from existing sources—such as SQL databases—and then enriching them with documentation or visualizations has tremendous value on its own.
+
+---
+
 ## Practical Modeling Guidelines
 
 1. **Start with the root diagram**: core classes and relationships only.  
