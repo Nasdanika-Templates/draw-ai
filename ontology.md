@@ -27,6 +27,14 @@ One workbook may have multiple sheets - one per ontology class.
 
 Operations can be defined in Excel spreadsheets as well.
 
+Excel and YAML definitions can be used together. Also multiple Excel and YAML definitions can be used for large ontologies.
+A complete list of attributes and operations would be created by loading Excel and YAML resources sequentially and applying changes.
+If two resources define the same value such as data type or description and the values are diffent the load may throw an error, report a warning or use on of the values.
+This way different people may own different resources. 
+For example, SMEs may own different parts of a large ontology managed in Excel and developers would own advanced configuration, such as attribute validation constraints, in YAML.
+
+This also allows to manage attributes in Excel and operations in YAML.
+
 ---
 
 ## Operations and Behavior
