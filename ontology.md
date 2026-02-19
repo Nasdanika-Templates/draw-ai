@@ -15,7 +15,17 @@ Use these conventions to keep diagrams consistent, traceable, and ready for expo
 ## Attributes: Visual vs. Properties
 
 - **Small ontologies:** show attributes visually inside the class box. Use colored pills for types and small icons for computed/derived attributes.  
-- **Large ontologies:** show only **entities and relationships** on diagrams. **Attributes** are defined in YAML in files or properties.
+- **Large ontologies:** show only **entities and relationships** on diagrams. **Attributes** are defined in YAML in files or properties or Excel spreadsheets.
+
+### Defining attributes in Excel
+
+Excel spreadsheets may have drop-down lists for data types and conditional formatting to hightliht data type cells using the same naming convention as in diagrams.
+Documentation cells may use a convention to reference external resources. E.g. if the value starts with ``@`` then it is treated as a documentation resource URL
+relative to the spreadsheet location.
+Excel spreadsheets may also have columns for agents to map attributes to agents.
+One workbook may have multiple sheets - one per ontology class.
+
+Operations can be defined in Excel spreadsheets as well.
 
 ---
 
@@ -29,8 +39,8 @@ Use these conventions to keep diagrams consistent, traceable, and ready for expo
 
 ## Agent Bounded Contexts
 
-Ontology elements can be associated with agents using tags or mapping YAML in properties and files. 
-The YAML approach is more flexible. It may be used to provide bindings to operation parameters.
+Ontology elements can be associated with agents using tags or mapping YAML in properties and files or Excel spreadsheets. 
+The Excel approach might be more convenient than the YAML approach, but the YAML approach is more flexible. It may be used to provide bindings to operation parameters.
 
 ---
 
@@ -66,7 +76,7 @@ The YAML approach is more flexible. It may be used to provide bindings to operat
 
 ## Traceability: From Diagram to Artifacts
 
-- **Attributes and operations** defined in YAML or properties are the single source of truth for code generation (JSON Schema, Ecore) and runtime bindings.  
+- **Attributes and operations** defined in YAML, Excel or properties are the single source of truth for code generation (JSON Schema, Ecore) and runtime bindings.  
 - **Export mapping**: classes → Ecore/JSON Schema; attributes → properties; operations → methods or runtime operations; tags → agent bindings.
 
 ---
@@ -114,7 +124,7 @@ Generating ontologies from existing sources—such as SQL databases—and then e
 
 1. **Start with the root diagram**: core classes and relationships only.  
 2. **Create class context diagrams** for each core class with attributes and operations. Link them from the root.  
-3. **Define attributes in YAML** for large models; show only key attributes visually.  
+3. **Define attributes in YAML or Excel** for large models; show only key attributes visually.  
 4. **Tag classes** with agent mappings early to enable agentic flows and bounded contexts.  
 5. **Document adjacent to elements**: every attribute should have at least a short description and one example.  
 6. **Use libraries** for UI components and common attribute types to speed modeling.  
@@ -125,7 +135,7 @@ Generating ontologies from existing sources—such as SQL databases—and then e
 ## When to Model Attributes Visually
 
 - **Yes**: small models, quick prototypes, UI‑driven screens where attributes are few.  
-- **No**: large enterprise ontologies — show entities and relationships only; keep attributes in YAML/property files and link to class context diagrams.
+- **No**: large enterprise ontologies — show entities and relationships only; keep attributes and operations in YAML or Excel files and link to class context diagrams.
 
 ---
 
